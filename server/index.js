@@ -12,6 +12,11 @@ app.use(express.json());
 const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || 'secret-key';
 
+// HEALTH CHECK
+app.get('/', (req, res) => {
+  res.send('MAMS Backend is running successfully');
+});
+
 // AUTHENTICATION
 app.post('/api/auth/login', async (req, res) => {
   const { username, password } = req.body;

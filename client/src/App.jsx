@@ -19,7 +19,7 @@ function Sidebar({ user }) {
   if (user.role !== 'COMMANDER') {
     links.push({ name: 'Purchases', path: '/purchases', icon: <ShoppingCart size={20} /> });
   }
-  
+
   links.push({ name: 'Transfers', path: '/transfers', icon: <ArrowRightLeft size={20} /> });
 
   if (user.role !== 'LOGISTICS') {
@@ -36,11 +36,10 @@ function Sidebar({ user }) {
             <Link
               key={link.path}
               to={link.path}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors ${
-                isActive 
-                  ? 'bg-primary/20 text-yellow-700' 
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors ${isActive
+                  ? 'bg-primary/20 text-yellow-700'
                   : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
-              }`}
+                }`}
             >
               <span className={isActive ? 'text-yellow-600' : 'text-slate-400'}>
                 {link.icon}
@@ -65,12 +64,12 @@ function Layout({ user, handleLogout, children }) {
         </div>
         <div className="flex items-center gap-4">
           <div className="text-sm font-medium text-slate-600">
-            {user.username} 
+            {user.username}
             <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200">
               {user.role}
             </span>
           </div>
-          <button 
+          <button
             onClick={handleLogout}
             className="p-2 text-slate-400 hover:text-danger transition-colors rounded-full hover:bg-red-50"
           >
