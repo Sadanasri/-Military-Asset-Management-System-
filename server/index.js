@@ -14,7 +14,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'secret-key';
 
 // HEALTH CHECK
 app.get('/', (req, res) => {
-  res.send('MAMS Backend is running successfully');
+  res.send('MAMS Backend is running successfully 🚀');
 });
 
 // AUTHENTICATION
